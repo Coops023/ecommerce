@@ -1,0 +1,41 @@
+.zx7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "manrope";
+}
+
+.container-zx7 {
+  background-image: url("/public/image-speaker-zx7-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0em -1em;
+  border-radius: 0.5em;
+  height: 30vh;
+  width: 75%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.transparent-btn {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: 8px 22px;
+}
+
+.transparent-btn {
+  margin-left: 1.5em;
+}
+
+.zx7-heading {
+  margin-left: 0.8em;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0.5em;
+}

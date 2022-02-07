@@ -1,0 +1,69 @@
+.home-header {
+  height: 70vh;
+  width: 100vw;
+  color: white;
+}
+
+.header-content-wrap {
+  background-image: url("/public/image-header.jpg");
+  background-size: cover;
+  background-position-y: -5em;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+}
+
+.header-content-wrap span {
+  font-size: 14px;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 250, 0.4);
+  letter-spacing: 10px;
+  font-family: "manrope";
+  line-height: 19px;
+}
+
+.header-content-wrap h1 {
+  font-family: "manrope";
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 58px;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5em;
+}
+
+.header-content-wrap p {
+  font-family: "manrope";
+  font-size: 14px;
+  line-height: 25px;
+  color: rgba(241, 241, 241, 0.7);
+}
+
+.orange-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #d87d4a;
+  text-transform: uppercase;
+  font-family: "manrope";
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 25px;
+  margin-top: 0.8em;
+}
+
+.orange-btn:hover {
+  color: white;
+}
+
+.orange-btn:active {
+  color: rgba(241, 241, 241, 0.7);
+}
