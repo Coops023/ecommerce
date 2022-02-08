@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  padding-left: 15px;
 }
 
 .transparent-btn {
@@ -29,12 +30,7 @@
   padding: 8px 22px;
 }
 
-.transparent-btn {
-  margin-left: 1.5em;
-}
-
 .zx7-heading {
-  margin-left: 0.8em;
   font-weight: bold;
   font-size: 30px;
   margin-bottom: 0.5em;

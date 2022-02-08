@@ -3,6 +3,7 @@ import "./HomePage.css";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Zx9SpeakerCard from "../components/Zx9SpeakerCard";
+import About from "../components/About";
 
 function HomePage() {
   return (
@@ -22,6 +23,7 @@ function HomePage() {
       </header>
       <ProductCard />
       <Zx9SpeakerCard />
+      <About />
     </>
   );
 }
