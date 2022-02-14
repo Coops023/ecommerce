@@ -12,7 +12,7 @@ export default function ProductCard() {
           alt="image of headphones"
         />
         <h3>Headphones</h3>
-        <Link className="section-1-btn" to="#">
+        <Link className="section-1-btn" to="/headphones">
           Shop{" "}
           <svg
             className="shop-arrow"
@@ -37,7 +37,7 @@ export default function ProductCard() {
           alt="image of headphones"
         />
         <h3>Speakers</h3>
-        <Link className="section-1-btn" to="#">
+        <Link className="section-1-btn" to="/speakers">
           Shop{" "}
           <svg
             className="shop-arrow"

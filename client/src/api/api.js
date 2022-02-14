@@ -17,8 +17,11 @@ export class Products {
   getAllHeadphones() {
     return this.api.get("/all-headphones");
   }
-  getAll() {
+  getAllSpeakers() {
     return this.api.get("/all-speakers");
+  }
+  getAllEarphones() {
+    return this.api.get("/all-earphones");
   }
   getOne(id) {
     return this.api.get(`/product/${id}`);

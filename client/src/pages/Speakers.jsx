@@ -1,45 +1,45 @@
 import { useEffect, useState } from "react";
-import "./Headphones.css";
+import "./Speakers.css";
 import { Link } from "react-router-dom";
 import { Products } from "../api/api";
 import ProductCard from "../components/ProductCard";
 import About from "../components/About";
 
-export default function Headphones() {
-  const [headphones, setHeadphones] = useState([]);
+export default function Speakers() {
+  const [speakers, setSpeakers] = useState([]);
 
-  async function getHeadphones() {
-    const response = await new Products().getAllHeadphones();
+  async function getSpeakers() {
+    const response = await new Products().getAllSpeakers();
     console.log("this is the response", response);
     console.log("this is the response data", response.data);
 
-    setHeadphones(response.data.headphones);
+    setSpeakers(response.data.speakers);
   }
 
   useEffect(() => {
-    getHeadphones();
+    getSpeakers();
   }, []);
 
   return (
     <>
       <div className="page-heading">
-        <h2>headphones</h2>
+        <h2>Speakers</h2>
       </div>
-      {headphones
-        .map((headphone) => {
+      {speakers
+        .map((speaker) => {
           return (
-            <article className="product-card" key={headphone.id}>
+            <article className="product-card" key={speaker.id}>
               <div className="product-img-wrap">
-                <img src={headphone.image.mobile} alt="" />
+                <img src={speaker.image.mobile} alt="speaker" />
               </div>
               <div className="product-content-wrap">
-                {headphone.new === true ? (
+                {speaker.new === true ? (
                   <h5 className="new-product">new product</h5>
                 ) : (
                   ""
                 )}
-                <h3>{headphone.name}</h3>
-                <p>{headphone.description}</p>
+                <h3>{speaker.name}</h3>
+                <p>{speaker.description}</p>
                 <Link className="orange-btn" to="#">
                   {" "}
                   See product

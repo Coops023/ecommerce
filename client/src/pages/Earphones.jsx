@@ -1,45 +1,45 @@
 import { useEffect, useState } from "react";
-import "./Headphones.css";
+import "./Earphones.css";
 import { Link } from "react-router-dom";
 import { Products } from "../api/api";
 import ProductCard from "../components/ProductCard";
 import About from "../components/About";
 
-export default function Headphones() {
-  const [headphones, setHeadphones] = useState([]);
+export default function Earphones() {
+  const [earphones, setEarphones] = useState([]);
 
-  async function getHeadphones() {
-    const response = await new Products().getAllHeadphones();
+  async function getEarphones() {
+    const response = await new Products().getAllEarphones();
     console.log("this is the response", response);
     console.log("this is the response data", response.data);
 
-    setHeadphones(response.data.headphones);
+    setEarphones(response.data.earphones);
   }
 
   useEffect(() => {
-    getHeadphones();
+    getEarphones();
   }, []);
 
   return (
     <>
       <div className="page-heading">
-        <h2>headphones</h2>
+        <h2>Earphones</h2>
       </div>
-      {headphones
-        .map((headphone) => {
+      {earphones
+        .map((earphone) => {
           return (
-            <article className="product-card" key={headphone.id}>
+            <article className="product-card" key={earphone.id}>
               <div className="product-img-wrap">
-                <img src={headphone.image.mobile} alt="" />
+                <img src={earphone.image.mobile} alt="earphone" />
               </div>
               <div className="product-content-wrap">
-                {headphone.new === true ? (
+                {earphone.new === true ? (
                   <h5 className="new-product">new product</h5>
                 ) : (
                   ""
                 )}
-                <h3>{headphone.name}</h3>
-                <p>{headphone.description}</p>
+                <h3>{earphone.name}</h3>
+                <p>{earphone.description}</p>
                 <Link className="orange-btn" to="#">
                   {" "}
                   See product

@@ -17,7 +17,7 @@ function HomePage() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link className="orange-btn" to="/headphones">
+          <Link className="orange-btn" to="/">
             See product
           </Link>
         </div>

@@ -5,6 +5,7 @@ import Facebook from "../assets/icon-facebook.svg";
 import Twitter from "../assets/icon-twitter.svg";
 import Instagram from "../assets/icon-instagram.svg";
 import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="footer">
