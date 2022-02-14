@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-
+// import { headphone } from "./server/routes";
+import { Link } from "react-router-dom";
 import { Products } from "../api/api";
 
 export default function Headphones() {
@@ -7,8 +8,9 @@ export default function Headphones() {
 
   async function getHeadphones() {
     const response = await new Products().getAllHeadphones();
-    // console.log("this is the response", response);
-    // console.log("this is the response data", response.data);
+    console.log("this is the response", response);
+    console.log("this is the response data", response.data);
+
     setHeadphones(response.data.headphones);
   }
 
@@ -17,11 +19,15 @@ export default function Headphones() {
   }, []);
 
   return (
-    <div>
-      <h2>Hello</h2>
+    <article>
       {headphones.map((headphone) => {
-        return <h2>{headphone.name}</h2>;
+        return (
+          <div>
+            <h1>{headphone.image.mobile}</h1>
+            <img width={200} height={200} src={headphone.image.mobile} alt="" />
+          </div>
+        );
       })}
-    </div>
+    </article>
   );
 }
