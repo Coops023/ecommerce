@@ -23,8 +23,8 @@ export class Products {
   getAllEarphones() {
     return this.api.get("/all-earphones");
   }
-  getOne(id) {
-    return this.api.get(`/product/${id}`);
+  getOne(_id) {
+    return this.api.get(`/product/${_id}`);
   }
   topWines() {
     return this.api.get(`/top-wine`);

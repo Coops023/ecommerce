@@ -44,6 +44,7 @@ router.get("/all-earphones", async (req, res) => {
 // get item by id
 router.get("/product/:id", async (req, res, next) => {
   const { id } = req.params;
+  console.log("server 47", id);
   if (!Types.ObjectId.isValid(id)) {
     res.status(400).json({ message: "Specified id is not valid" });
     return;

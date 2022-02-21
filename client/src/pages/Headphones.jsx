@@ -28,7 +28,7 @@ export default function Headphones() {
       {headphones
         .map((headphone) => {
           return (
-            <article className="product-card" key={headphone.id}>
+            <article className="product-card" key={headphone._id}>
               <div className="product-img-wrap">
                 <img src={headphone.image.mobile} alt="" />
               </div>
@@ -40,7 +40,11 @@ export default function Headphones() {
                 )}
                 <h3>{headphone.name}</h3>
                 <p>{headphone.description}</p>
-                <Link className="orange-btn" to="#">
+                <Link
+                  key={headphone._id}
+                  className="orange-btn"
+                  to={`/product/${headphone._id}`}
+                >
                   {" "}
                   See product
                 </Link>

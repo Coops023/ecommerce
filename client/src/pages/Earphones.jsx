@@ -40,7 +40,7 @@ export default function Earphones() {
                 )}
                 <h3>{earphone.name}</h3>
                 <p>{earphone.description}</p>
-                <Link className="orange-btn" to="#">
+                <Link className="orange-btn" to={`/product/${earphone._id}`}>
                   {" "}
                   See product
                 </Link>

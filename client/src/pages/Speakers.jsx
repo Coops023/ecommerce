@@ -40,7 +40,7 @@ export default function Speakers() {
                 )}
                 <h3>{speaker.name}</h3>
                 <p>{speaker.description}</p>
-                <Link className="orange-btn" to="#">
+                <Link className="orange-btn" to={`/product/${speaker._id}`}>
                   {" "}
                   See product
                 </Link>
