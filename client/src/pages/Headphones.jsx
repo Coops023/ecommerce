@@ -5,7 +5,24 @@ import { Products } from "../api/api";
 import ProductCard from "../components/ProductCard";
 import About from "../components/About";
 
+//  IMPORTS FOR REDUX
+// import { useSelector, useDispatch } from "react-redux";
+// import { getHeaphones as listHeadphones } from "../redux/actions/productActions";
+
 export default function Headphones() {
+  //BELOW IS WHAT I HAVE TRIED TO RENDER NEW REDUX CODE ADDED TODAY
+
+  // const dispatch = useDispatch();
+
+  // const getHeadphones = useSelector((state) => state.getHeadphones);
+  // const { headphones, loading, error } = getHeadphones;
+
+  // useEffect(() => {
+  //   dispatch(listHeadphones());
+  // }, [dispatch]);
+
+  // THIS IS CODE I WAS USING BEFORE TRYING REDUX
+
   const [headphones, setHeadphones] = useState([]);
 
   async function getHeadphones() {

@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import Zx9SpeakerCard from "../components/Zx9SpeakerCard";
 import About from "../components/About";
 import Headphones from "./Headphones";
+import { useEffect } from "react";
 
 function HomePage() {
   return (
