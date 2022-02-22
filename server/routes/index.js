@@ -65,24 +65,28 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
-router.post("/add-to-cart", (req, res) => {
-  const { itemId } = req.body;
-  console.log("70 add to cart", itemId);
+// router.get('/add-to-cart/:id', (req,res,next)=>{
 
-  Cart.create({ item: itemId }).then((response) => {
-    console.log("this is line 92 response review route", response);
-    console.log("74", req.session);
-    res.status(200).json(response);
-  });
-});
+// })
 
-router.get("/cart", (req, res) => {
-  Cart.find()
-    .populate("item")
-    .then((cart) => res.json(cart))
-    .catch((err) => {
-      console.log("get cart error:", err);
-    });
-});
+// router.post("/add-to-cart", (req, res) => {
+//   const { itemId } = req.body;
+//   console.log("70 add to cart", itemId);
+
+//   Cart.create({ item: itemId }).then((response) => {
+//     console.log("this is line 92 response review route", response);
+//     console.log("74", req.session);
+//     res.status(200).json(response);
+//   });
+// });
+
+// router.get("/cart", (req, res) => {
+//   Cart.find()
+//     .populate("item")
+//     .then((cart) => res.json(cart))
+//     .catch((err) => {
+//       console.log("get cart error:", err);
+//     });
+// });
 
 module.exports = router;

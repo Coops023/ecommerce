@@ -3,6 +3,8 @@ const express = require("express");
 
 var session = require("express-session");
 
+const bodyParser = require("body-parser");
+
 // ℹ️ Responsible for the messages you see in the terminal as requests are coming in
 // https://www.npmjs.com/package/morgan
 const logger = require("morgan");
