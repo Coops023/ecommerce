@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev:all": "concurrently \"PORT=3000 nodemon ./bin/www\" \"PORT=5005 yarn workspace client run start\"",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
