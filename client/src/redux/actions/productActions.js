@@ -1,5 +1,6 @@
 import * as actionTypes from "../constants/productConstants";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const baseUrl = process.env.REACT_APP_API_URL || "http://localhost:5005";
 
