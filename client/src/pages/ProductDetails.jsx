@@ -16,7 +16,7 @@ export default function ProductDetails({ match, history }) {
   const { id } = useParams();
 
   const [price, setPrice] = useState(0);
-  const [productQuantity, setProductQuantity] = useState(0);
+  const [productQuantity, setProductQuantity] = useState(1);
   const [features, setFeatures] = useState("");
 
   const productDetails = useSelector((state) => state.getProductDetails);
@@ -37,17 +37,30 @@ export default function ProductDetails({ match, history }) {
     setProductQuantity(productQuantity - 1);
   };
 
-  const addComaToPrice = async () => {
-    const { product } = await productDetails;
+  const addToCartHandler = () => {
+    console.log("product cart handler", product.item._id);
+    dispatch(addToCart(product.item._id, productQuantity));
+  };
 
-    setPrice(product.item.price.toLocaleString());
+  const addComaToPrice = async () => {
+    try {
+      const { product } = await productDetails;
+      console.log("price details", productDetails);
+      setPrice(product.item.price.toLocaleString());
+    } catch {
+      console.log("error price function");
+    }
   };
 
   const seperateParagraph = async () => {
-    const { product } = await productDetails;
-    console.log("line 72 ProDeit", product);
+    try {
+      const { product } = await productDetails;
+      console.log("line 72 ProDeit", product);
 
-    setFeatures(product.item.features.split(/\n/));
+      setFeatures(product.item.features.split(/\n/));
+    } catch (err) {
+      console.log("error parapgraph function", err);
+    }
   };
 
   useEffect(() => {
@@ -64,8 +77,8 @@ export default function ProductDetails({ match, history }) {
   // }
   return (
     <section className="product-details">
-      {loading || product === undefined || product.item == undefined ? (
-        <h1>loading...</h1>
+      {loading || product === undefined || product.item === undefined ? (
+        <h1>loading...</h1> //replace with spinner
       ) : error ? (
         <div>{error}</div>
       ) : (
@@ -90,24 +103,35 @@ export default function ProductDetails({ match, history }) {
               <span className="product-price">{`$ ${price}`}</span>
               <div className="quantity-input">
                 <div className="selector-wrap">
-                  <span className="quantity-selector" onClick={handleMinus}>
-                    -
-                  </span>
+                  <input
+                    className="quantity-selector"
+                    onClick={handleMinus}
+                    type="button"
+                    value="-"
+                  />
 
                   <input
                     className="quantity-selector"
                     type="number"
                     id="quantity"
                     name="quantity"
-                    min="0"
-                    max="10"
                     value={productQuantity}
+                    onChange={(e) => setProductQuantity(e.target.value)}
+                    min="0"
+                    max={product.item.countInStock}
                   />
-                  <span className="quantity-selector" onClick={handlePlus}>
-                    +
-                  </span>
+                  <input
+                    className="quantity-selector"
+                    onClick={handlePlus}
+                    type="button"
+                    value="+"
+                  />
 
-                  <Link className="orange-btn-product" to="#">
+                  <Link
+                    className="orange-btn-product"
+                    to="#"
+                    onClick={addToCartHandler}
+                  >
                     Add to cart
                   </Link>
                 </div>

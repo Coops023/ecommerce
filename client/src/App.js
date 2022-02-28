@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
@@ -9,10 +9,22 @@ import HomePage from "./pages/HomePage";
 import Earphones from "./pages/Earphones";
 import ProductDetails from "./pages/ProductDetails";
 
+import Cart from "./pages/Cart";
+
 function App() {
+  const [cart, setCart] = useState(false);
+
+  const showCart = () => {
+    if (cart) {
+      setCart(false);
+    } else {
+      setCart(true);
+    }
+  };
   return (
     <div className="App">
-      <Navbar />
+      <Navbar showCart={showCart} />
+      {!cart ? "" : <Cart />}
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/headphones" element={<Headphones />} />
