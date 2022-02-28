@@ -1,29 +1,35 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 import "../pages/Cart.css";
 
-export default function Cart() {
+export default function Cart(props) {
+  console.log(props);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
-  const [sumCartItem, setSumCartItem] = useState(0);
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-  console.log("CART DATA", cart.cartItems);
 
   const cartTotal = async () => {
     try {
       setTotal(
         cart.cartItems.reduce((price, item) => item.price * item.qty + price, 0)
       );
-      console.log("total", total);
     } catch (err) {
       console.log(err);
     }
   };
 
+  const removeHandler = () => {
+    cartItems.splice(0, cartItems.length);
+    dispatch(removeFromCart());
+    setTotal(0);
+  };
+
   useEffect(() => {
     cartTotal();
-  }, [cart]);
+  }, []);
 
   return (
     <div className="cart">
@@ -33,7 +39,9 @@ export default function Cart() {
         <div className="cart-container">
           <div className="cart-heading-remove">
             <h5>Cart {`(${cart.cartItems.length})`}</h5>
-            <button className="remove-btn">Remove all</button>
+            <button className="remove-btn" onClick={removeHandler}>
+              Remove all
+            </button>
           </div>
 
           {cart.cartItems == undefined ? (
@@ -87,7 +95,13 @@ export default function Cart() {
             <span className="total-price">${total.toLocaleString()}</span>
           </div>
           <div className="checkout-btn-wrap">
-            <button className="checkout-btn">Checkout</button>
+            <Link
+              to="/checkout"
+              className="checkout-btn"
+              onClick={props.showCart}
+            >
+              Checkout
+            </Link>
           </div>
         </div>
       )}

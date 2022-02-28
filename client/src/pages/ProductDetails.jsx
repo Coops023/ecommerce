@@ -42,16 +42,6 @@ export default function ProductDetails({ match, history }) {
     dispatch(addToCart(product.item._id, productQuantity));
   };
 
-  const addComaToPrice = async () => {
-    try {
-      const { product } = await productDetails;
-      console.log("price details", productDetails);
-      setPrice(product.item.price.toLocaleString());
-    } catch {
-      console.log("error price function");
-    }
-  };
-
   const seperateParagraph = async () => {
     try {
       const { product } = await productDetails;
@@ -62,10 +52,6 @@ export default function ProductDetails({ match, history }) {
       console.log("error parapgraph function", err);
     }
   };
-
-  useEffect(() => {
-    addComaToPrice();
-  }, []);
 
   useEffect(() => {
     seperateParagraph();
@@ -100,7 +86,7 @@ export default function ProductDetails({ match, history }) {
               )}
               <h3>{product.item.name}</h3>
               <p>{product.item.description}</p>
-              <span className="product-price">{`$ ${price}`}</span>
+              <span className="product-price">{`$ ${product.item.price.toLocaleString()}`}</span>
               <div className="quantity-input">
                 <div className="selector-wrap">
                   <input

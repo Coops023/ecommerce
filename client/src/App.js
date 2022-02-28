@@ -10,6 +10,7 @@ import Earphones from "./pages/Earphones";
 import ProductDetails from "./pages/ProductDetails";
 
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -24,13 +25,14 @@ function App() {
   return (
     <div className="App">
       <Navbar showCart={showCart} />
-      {!cart ? "" : <Cart />}
+      {!cart ? "" : <Cart showCart={showCart} />}
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/headphones" element={<Headphones />} />
         <Route exact path="/speakers" element={<Speakers />} />
         <Route exact path="/earphones" element={<Earphones />} />
         <Route exact path="/product/:id" element={<ProductDetails />} />
+        <Route exact path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </div>
