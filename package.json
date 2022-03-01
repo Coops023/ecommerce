@@ -4,7 +4,9 @@
   "description": "Ecommerce app for portfolio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:front": "cd client && npm run start",
+    "start:back": "cd server && nodemon start"
   },
   "repository": {
     "type": "git",
