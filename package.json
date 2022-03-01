@@ -1,17 +1,17 @@
 {
   "name": "audio-app",
   "version": "1.0.0",
-  "description": "Ecommerce app for portfolio",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd server && node server.js"
+    "build": "echo 'building'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Coops023/ecommerce.git"
   },
-  "author": "cooper bjorkelund",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Coops023/ecommerce/issues"
