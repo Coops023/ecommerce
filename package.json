@@ -1,0 +1,19 @@
+{
+  "name": "audio-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coops023/ecommerce.git"
+  },
+  "author": "Cooper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coops023/ecommerce/issues"
+  },
+  "homepage": "https://github.com/Coops023/ecommerce#readme"
+}
