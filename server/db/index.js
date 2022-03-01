@@ -6,9 +6,10 @@ const mongoose = require("mongoose");
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/audio-app";
+const MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING;
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_CONNECTION_STRING)
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`

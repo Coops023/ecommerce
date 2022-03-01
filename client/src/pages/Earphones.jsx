@@ -32,9 +32,12 @@ export default function Earphones() {
           .map((earphone) => {
             return (
               <article className="product-card" key={earphone.id}>
-                <div className="product-img-wrap">
-                  <img src={earphone.image.mobile} alt="earphone" />
-                </div>
+                <img
+                  className="product-image"
+                  src={earphone.image.mobile}
+                  alt="earphone"
+                />
+
                 <div className="product-content-wrap">
                   {earphone.new === true ? (
                     <h5 className="new-product">new product</h5>

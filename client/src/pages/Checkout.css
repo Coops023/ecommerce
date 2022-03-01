@@ -1,6 +1,6 @@
 .checkout {
   font-family: manrope;
-  height: 190vh;
+  min-height: 130%;
 }
 
 .back-btn {
@@ -76,6 +76,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .item-wrap img {
@@ -95,4 +96,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.total-checkout {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3em 0;
+}
+
+.total-checkout span:nth-child(2) {
+  font-weight: bold;
+}
+
+.total-final {
+  padding-top: 0.7em;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-final span:nth-child(2) {
+  color: #d87d4a;
+  font-weight: bold;
+}
+
+.orange-btn {
+  border: none;
+  margin-bottom: 3em;
+}
+
+.summary {
+  margin-top: 2em;
 }

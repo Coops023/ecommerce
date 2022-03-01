@@ -11,6 +11,7 @@ import ProductDetails from "./pages/ProductDetails";
 
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -24,6 +25,7 @@ function App() {
   };
   return (
     <div className="App">
+      <ScrollToTop />
       <Navbar showCart={showCart} />
       {!cart ? "" : <Cart showCart={showCart} />}
       <Routes>

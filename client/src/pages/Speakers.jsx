@@ -18,20 +18,6 @@ export default function Speakers() {
     dispatch(listSpeakers());
   }, [dispatch]);
 
-  // const [speakers, setSpeakers] = useState([]);
-
-  // async function getSpeakers() {
-  //   const response = await new Products().getAllSpeakers();
-  //   console.log("this is the response", response);
-  //   console.log("this is the response data", response.data);
-
-  //   setSpeakers(response.data.speakers);
-  // }
-
-  // useEffect(() => {
-  //   getSpeakers();
-  // }, []);
-
   return (
     <>
       <div className="page-heading">
@@ -44,9 +30,12 @@ export default function Speakers() {
           .map((speaker) => {
             return (
               <article className="product-card" key={speaker.id}>
-                <div className="product-img-wrap">
-                  <img src={speaker.image.mobile} alt="speaker" />
-                </div>
+                <img
+                  className="product-image"
+                  src={speaker.image.mobile}
+                  alt="speaker"
+                />
+
                 <div className="product-content-wrap">
                   {speaker.new === true ? (
                     <h5 className="new-product">new product</h5>

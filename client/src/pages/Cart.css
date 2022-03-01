@@ -93,3 +93,15 @@
   background-color: #d87d4a;
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 1000px) {
+  .cart-container {
+    width: 50%;
+    margin: 10em auto;
+  }
+
+  .cart-items img {
+    margin-top: -1em;
+    height: 70%;
+  }
+}

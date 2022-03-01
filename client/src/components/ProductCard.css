@@ -46,3 +46,20 @@
   bottom: 1.5px;
   left: 3px;
 }
+
+@media screen and (min-width: 768px) {
+  .home-section-1 {
+    flex-direction: row;
+    height: 50%;
+    margin: 2em 2em 0em 2em;
+  }
+  .section-1-card {
+    margin: 6em 1em;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .home-section-1 {
+    margin: 5em auto;
+    width: 90%;
+  }
+}

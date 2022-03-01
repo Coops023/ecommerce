@@ -1,6 +1,6 @@
 .home-header {
   height: 70vh;
-  width: 100vw;
+  width: 100%;
   color: white;
 }
 
@@ -10,7 +10,6 @@
   background-position-y: -5em;
   background-position-x: center;
   background-repeat: no-repeat;
-  background-size: 100%;
   height: 70vh;
   display: flex;
   flex-direction: column;
@@ -66,4 +65,65 @@
 
 .orange-btn:active {
   color: rgba(241, 241, 241, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+  .header-content-wrap {
+    background-position-y: -12em;
+    background-size: 80%;
+    background-color: #191919;
+  }
+  .header-content-wrap p {
+    font-family: "manrope";
+    font-size: 20px;
+    line-height: 25px;
+    color: rgba(241, 241, 241, 0.7);
+  }
+  .header-content-wrap span {
+    font-size: 20px;
+  }
+
+  .header-content-wrap h1 {
+    font-family: "manrope";
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 58px;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5em;
+  }
+
+  .orange-btn {
+    padding: 15px 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header-content-wrap {
+    background-image: url("/public/image-hero.jpg");
+    background-position-y: -2em;
+    background-position-x: 15em;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding-right: 30em;
+    padding-left: 4em;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .header-content-wrap {
+    background-position-y: -4em;
+  }
+}
+@media screen and (min-width: 1650px) {
+  .header-content-wrap {
+    background-position-y: -6em;
+  }
+}
+@media screen and (min-width: 1850px) {
+  .header-content-wrap {
+    background-position-y: -8em;
+  }
 }

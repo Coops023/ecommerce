@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import CheckoutModal from "../components/CheckoutModal";
 import "../pages/Checkout.css";
 
 export default function Checkout() {
@@ -12,6 +13,15 @@ export default function Checkout() {
   const [vat, setVat] = useState(0);
   const [grandTotal, setGrandTotal] = useState(0);
   const [emoney, setEmoney] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  const showModal = () => {
+    if (modal) {
+      setModal(false);
+    } else {
+      setModal(true);
+    }
+  };
 
   const cartTotal = async () => {
     try {
@@ -33,7 +43,7 @@ export default function Checkout() {
 
   const grandTotalHandler = async () => {
     try {
-      setGrandTotal(total + vat + shipping);
+      setGrandTotal(total + shipping);
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +53,7 @@ export default function Checkout() {
     cartTotal();
     vatTotal();
     grandTotalHandler();
-  }, [cart]);
+  }, [cart, vat, grandTotal]);
 
   const emoneyHandler = () => {
     if (emoney) {
@@ -55,6 +65,8 @@ export default function Checkout() {
 
   return (
     <div className="checkout">
+      {modal ? <CheckoutModal total={grandTotal} /> : ""}
+
       <button className="back-btn">Go Back</button>
       <form className="checkout-form">
         <h2>checkout</h2>
@@ -65,6 +77,7 @@ export default function Checkout() {
           name="name"
           type="text"
           placeholder="Axel Ward"
+          required="true"
         />
 
         <label for="email">Email Address</label>
@@ -73,6 +86,7 @@ export default function Checkout() {
           name="email"
           type="text"
           placeholder="axel@gmail.com"
+          required="true"
         />
 
         <label for="name">Phone Number</label>
@@ -81,6 +95,7 @@ export default function Checkout() {
           name="Phone number"
           type="text"
           placeholder="+1202-555-0136"
+          required="true"
         />
 
         <h5>Shipping info</h5>
@@ -90,6 +105,7 @@ export default function Checkout() {
           name="address"
           type="text"
           placeholder="1137 Williams Avenue"
+          required="true"
         />
 
         <label for="zip">Zip Code</label>
@@ -98,6 +114,7 @@ export default function Checkout() {
           name="sip"
           type="text"
           placeholder="1000 Wp"
+          required="true"
         />
 
         <label for="city">City</label>
@@ -106,6 +123,7 @@ export default function Checkout() {
           name="city"
           type="text"
           placeholder="Amsterdam"
+          required="true"
         />
 
         <label for="country">Country</label>
@@ -114,6 +132,7 @@ export default function Checkout() {
           name="country"
           type="text"
           placeholder="The Netherlands"
+          required="true"
         />
 
         <h5>Payment Details</h5>
@@ -156,7 +175,7 @@ export default function Checkout() {
           ""
         )}
 
-        <h3>Summary</h3>
+        <h3 className="summary">Summary</h3>
         {cartItems.map((item) => {
           return (
             <div className="item-wrap">
@@ -181,23 +200,29 @@ export default function Checkout() {
             </div>
           );
         })}
-        <div>
+        <div className="total-checkout">
           <span>total</span>
-          <span>${total.toLocaleString()}</span>
+          <span className="total-span">${total.toLocaleString()}</span>
         </div>
-        <div>
+        <div className="total-checkout">
           <span>Shipping</span>
-          <span>${shipping}</span>
+          <span className="total-span">${shipping}</span>
         </div>
-        <div>
+        <div className="total-checkout">
           <span>Vat (included)</span>
-          <span>${Math.floor(vat).toLocaleString()}</span>
+          <span className="total-span">
+            ${Math.floor(vat).toLocaleString()}
+          </span>
         </div>
-        <div>
+        <div className="total-final">
           <span>Grand total</span>
-          <span>${Math.floor(grandTotal).toLocaleString()}</span>
+          <span className="grand-total">
+            ${Math.floor(grandTotal).toLocaleString()}
+          </span>
         </div>
-        <button>Continue & Pay</button>
+        <button onClick={showModal} type="submit" className="orange-btn">
+          Continue & Pay
+        </button>
       </form>
     </div>
   );

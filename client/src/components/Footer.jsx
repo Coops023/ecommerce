@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="orange-top"></div>
-      <img src={Logo} alt="" srcset="" />
+      <img className="audio-logo" src={Logo} alt="" srcset="" />
       <div className="footer-content-wrap">
         <ul className="footer-links">
           <li>
@@ -40,11 +40,13 @@ export default function Footer() {
           helping you get the most out of personal audio. Come and visit our
           demo facility - we’re open 7 days a week.
         </p>
-        <p className="footer-copy">Copyright 2021. All Rights Reserved</p>{" "}
-        <div className="logo-wrap">
-          <img src={Facebook} alt="facebook logo" srcset="" />
-          <img src={Twitter} alt="facebook logo" srcset="" />
-          <img src={Instagram} alt="facebook logo" srcset="" />
+        <div className="copy-social">
+          <p className="footer-copy">Copyright 2021. All Rights Reserved</p>{" "}
+          <div className="logo-wrap">
+            <img src={Facebook} alt="facebook logo" srcset="" />
+            <img src={Twitter} alt="facebook logo" srcset="" />
+            <img src={Instagram} alt="facebook logo" srcset="" />
+          </div>
         </div>
       </div>
     </footer>
